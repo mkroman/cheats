@@ -1,0 +1,7 @@
+% kubernetes, k8s
+
+# Get stuck resources in a given namespace
+kubectl api-resources --verbs=list --namespaced -o name \
+  | xargs -n 1 kubectl get --show-kind --ignore-not-found -n <namespace>
+
+$ namespace: kubectl get namespace -o jsonpath="{..metadata.name}"
