@@ -1,6 +1,7 @@
 % git, code
 
-# Count the number of commits between branches
-git rev-list --count <branch> ^<branch>
+# Count the number of commits between current and target branch
+git rev-list --count <branch> ^<target-branch>
 
-$ branch: git branch | awk '{print $NF}'
+$ branch: git rev-parse --symbolic-full-name --abbrev-ref HEAD
+$ target-branch: git branch | awk '{print $NF}'
