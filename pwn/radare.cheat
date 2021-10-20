@@ -1,0 +1,4 @@
+% pwn, radare
+
+# Show binary info
+rabin2 -I <FILE>

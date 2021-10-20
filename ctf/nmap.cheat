@@ -1,0 +1,4 @@
+% ctf, nmap
+
+# Nmap all ports on a host and probe services
+nmap -T4 -p- -sV <HOST>

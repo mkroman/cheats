@@ -4,4 +4,8 @@
 kubectl api-resources --verbs=list --namespaced -o name \
   | xargs -n 1 kubectl get --show-kind --ignore-not-found -n <namespace>
 
+# Copy secret from one namespace to another
+kubectl get secret <name> --namespace=<namespace> --export -o yaml \
+  | kubectl apply --namespace=<namespace> -f -
+
 $ namespace: kubectl get namespace -o jsonpath="{..metadata.name}" | tr ' ' '\n'
